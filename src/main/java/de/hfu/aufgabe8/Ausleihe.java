@@ -12,7 +12,7 @@ public class Ausleihe {
     private Date rueckgabedatum;
     private int anzahlVerlaengert;
     /**
-     * Abgeschlossen, Beschädigt, Verloren Verzug, ...
+     * Abgeschlossen, Beschaedigt, Verloren Verzug, ...
      */
     private AusleiheStati status;
 

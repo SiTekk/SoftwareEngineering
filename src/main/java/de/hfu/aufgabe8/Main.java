@@ -6,9 +6,5 @@ public class Main
     {
         Nutzerverwaltung nutzerverwaltung = new Nutzerverwaltung();
         Medienverwaltung medienverwaltung  = new Medienverwaltung();
-
-
-
-
     }
 }
