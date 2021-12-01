@@ -11,9 +11,16 @@ public class Ausleihe {
     private Date ausleihdatum;
     private Date rueckgabedatum;
     private int anzahlVerlaengert;
-    /**
-     * Abgeschlossen, Beschaedigt, Verloren Verzug, ...
-     */
     private AusleiheStati status;
 
+    Ausleihe(Medium gebuchtesMedium, Nutzer ausleiher, Date ausleihdatum, Date rueckgabedatum, Mahnung mahnung)
+    {
+        this.gebuchtesMedium = gebuchtesMedium;
+        this.ausleiher = ausleiher;
+        this.ausleihdatum = ausleihdatum;
+        this.rueckgabedatum = rueckgabedatum;
+        this.mahnung = mahnung;
+        anzahlVerlaengert = 0;
+        status = AusleiheStati.Laufend;
+    }
 }
