@@ -1,7 +1,6 @@
 package de.hfu.aufgabe8;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 public abstract class Medium
 {
@@ -12,10 +11,21 @@ public abstract class Medium
     private String isbn;
     private String beschreibung;
     private Genre genre;
-    private Date erscheinungsdatum;
+    private LocalDate erscheinungsdatum;
     private String verlag;
     private String sprache;
     private int verlaengerungsdauer;
     private boolean isVorbestellt;
 
+    Medium(String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache)
+    {
+        this.titel = titel;
+        this.autor = autor;
+        this.isbn = isbn;
+        this.beschreibung = beschreibung;
+        this.genre = genre;
+        this.erscheinungsdatum = erscheinungsdatum;
+        this.verlag = verlag;
+        this.sprache = sprache;
+    }
 }

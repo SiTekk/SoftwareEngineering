@@ -1,6 +1,6 @@
 package de.hfu.aufgabe8;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Ausleihe {
 
@@ -8,12 +8,12 @@ public class Ausleihe {
     private Nutzer ausleiher;
     private Medium gebuchtesMedium;
     private int id;
-    private Date ausleihdatum;
-    private Date rueckgabedatum;
+    private LocalDate ausleihdatum;
+    private LocalDate rueckgabedatum;
     private int anzahlVerlaengert;
     private AusleiheStati status;
 
-    Ausleihe(Medium gebuchtesMedium, Nutzer ausleiher, Date ausleihdatum, Date rueckgabedatum, Mahnung mahnung)
+    Ausleihe(Medium gebuchtesMedium, Nutzer ausleiher, LocalDate ausleihdatum, LocalDate rueckgabedatum, Mahnung mahnung)
     {
         this.gebuchtesMedium = gebuchtesMedium;
         this.ausleiher = ausleiher;
