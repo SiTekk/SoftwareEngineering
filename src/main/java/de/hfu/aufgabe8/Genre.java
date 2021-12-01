@@ -4,5 +4,9 @@ public enum Genre {
     Informatik,
     Fantasy,
     Roman,
-    Thriller
+    Thriller,
+    SciFi,
+    Comedy,
+    Dokumentation,
+    Fiktion
 }

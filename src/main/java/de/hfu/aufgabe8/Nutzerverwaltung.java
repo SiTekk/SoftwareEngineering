@@ -15,8 +15,7 @@ public class Nutzerverwaltung {
      * @param nutzer
      */
     public void nutzerEntfernen(Nutzer nutzer) {
-        // TODO - implement Nutzerverwaltung.nutzerEntfernen
-        throw new UnsupportedOperationException();
+        nutzerList.remove(nutzer);
     }
 
     /**
@@ -41,7 +40,7 @@ public class Nutzerverwaltung {
      * @param nutzer
      */
     public void nutzerdatenUeberpruefen(Nutzer nutzer) {
-        // TODO - implement Nutzerverwaltung.nutzerdaten�berpr�fen
+        // TODO - implement Nutzerverwaltung.nutzerdatenÜberprüfen
         throw new UnsupportedOperationException();
     }
 
@@ -58,7 +57,7 @@ public class Nutzerverwaltung {
      * @param mahnung
      */
     public void mahnungAendern(Mahnung mahnung) {
-        // TODO - implement Nutzerverwaltung.mahnung�ndern
+        // TODO - implement Nutzerverwaltung.mahnungÄndern
         throw new UnsupportedOperationException();
     }
 

@@ -27,7 +27,6 @@ public abstract class Nutzer {
         this.geburtstag = geburtstag;
         this.alter = getAlter(geburtstag);
         this.fakultaet = fakultaet;
-
     }
 
     private int getAlter(Date geburtstag) {
@@ -38,5 +37,4 @@ public abstract class Nutzer {
                 ? possibleAge - 1
                 : possibleAge;
     }
-
 }
