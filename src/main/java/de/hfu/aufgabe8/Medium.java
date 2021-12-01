@@ -5,8 +5,6 @@ import java.util.List;
 
 public abstract class Medium
 {
-    private static List<Medium> MediumList;
-
     private Standort Standort;
     private int id;
     private String titel;

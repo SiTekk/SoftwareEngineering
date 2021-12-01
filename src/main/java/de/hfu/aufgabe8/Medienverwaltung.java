@@ -1,14 +1,23 @@
 package de.hfu.aufgabe8;
 
-public class Medienverwaltung {
+import java.util.Date;
+import java.util.List;
+
+public class Medienverwaltung
+{
+    private static List<Medium> mediumList;
+    private static List<Ausleihe> ausleiheList;
+    private static List<Standort> standortList;
 
     /**
      * @param medium
      * @param nutzer
      */
-    public void mediumAusleihen(Medium medium, Nutzer nutzer) {
+    public void mediumAusleihen(Medium medium, Nutzer nutzer)
+    {
         // TODO - implement Medienverwaltung.mediumAusleihen
         throw new UnsupportedOperationException();
+
     }
 
     /**
