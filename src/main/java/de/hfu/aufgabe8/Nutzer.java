@@ -3,7 +3,6 @@ package de.hfu.aufgabe8;
 import java.util.*;
 
 public abstract class Nutzer {
-    private static List<Nutzer> NutzerList;
 
     Collection<Ausleihe> ausleihen;
     private int id;
@@ -17,19 +16,9 @@ public abstract class Nutzer {
     private Fakultaet fakultaet;
 
     Nutzer() {
-        if (NutzerList == null) {
-            //TODO Initialisierung
-        }
-        NutzerList.add(this);
     }
 
     Nutzer(String vorname, String nachname, String eMail, String benutzername, String passwort, Date geburtstag, Fakultaet fakultaet) {
-        if (NutzerList == null) {
-            //TODO Initialisierung
-        }
-
-        NutzerList.add(this);
-
         this.vorname = vorname;
         this.nachname = nachname;
         this.eMail = eMail;
@@ -49,4 +38,5 @@ public abstract class Nutzer {
                 ? possibleAge - 1
                 : possibleAge;
     }
+
 }

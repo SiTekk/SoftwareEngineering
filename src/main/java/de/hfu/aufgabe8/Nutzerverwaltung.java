@@ -4,7 +4,11 @@ import java.util.*;
 
 public class Nutzerverwaltung {
 
-    private Collection<Nutzer> nutzer;
+    private Collection<Nutzer> nutzerList;
+
+    public Nutzerverwaltung() {
+        nutzerList = new ArrayList<>();
+    }
 
     /**
      * @param nutzer
@@ -26,9 +30,10 @@ public class Nutzerverwaltung {
      * @param nutzer
      */
     public void nutzerHinzufuegen(Nutzer nutzer) {
-        // TODO - implement Nutzerverwaltung.nutzerHinzuf�gen
-        throw new UnsupportedOperationException();
-
+        if (nutzerList == null) {
+            nutzerList = new ArrayList<>();
+        }
+        nutzerList.add(nutzer);
     }
 
     /**
