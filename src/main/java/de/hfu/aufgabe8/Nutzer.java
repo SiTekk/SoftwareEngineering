@@ -1,5 +1,7 @@
 package de.hfu.aufgabe8;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 
 public abstract class Nutzer {
@@ -9,16 +11,21 @@ public abstract class Nutzer {
     private String vorname;
     private String nachname;
     private String eMail;
+
+    public String getBenutzername() {
+        return benutzername;
+    }
+
     private String benutzername;
     private String passwort;
-    private Date geburtstag;
+    private LocalDate geburtstag;
     private int alter;
     private Fakultaet fakultaet;
 
     Nutzer() {
     }
 
-    Nutzer(String vorname, String nachname, String eMail, String benutzername, String passwort, Date geburtstag, Fakultaet fakultaet) {
+    Nutzer(String vorname, String nachname, String eMail, String benutzername, String passwort, LocalDate geburtstag, Fakultaet fakultaet) {
         this.vorname = vorname;
         this.nachname = nachname;
         this.eMail = eMail;
@@ -29,12 +36,8 @@ public abstract class Nutzer {
         this.fakultaet = fakultaet;
     }
 
-    private int getAlter(Date geburtstag) {
-        Calendar now = Calendar.getInstance();
-        int currentMonth = now.get(Calendar.MONTH) + 1;
-        int possibleAge = now.get(Calendar.YEAR) - geburtstag.getYear();
-        return currentMonth < geburtstag.getMonth() || (currentMonth == geburtstag.getMonth() && now.get(Calendar.DATE) < geburtstag.getDay())
-                ? possibleAge - 1
-                : possibleAge;
+    private int getAlter(LocalDate geburtstag) {
+        Period period = Period.between(geburtstag, LocalDate.now());
+        return period.getYears();
     }
 }

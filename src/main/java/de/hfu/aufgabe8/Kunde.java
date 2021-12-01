@@ -1,6 +1,6 @@
 package de.hfu.aufgabe8;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Kunde extends Nutzer {
 
@@ -15,7 +15,7 @@ public class Kunde extends Nutzer {
     }
 
     Kunde(String vorname, String nachname, String eMail, String benutzername,
-          String passwort, Date geburtstag, Fakultaet fakultaet,
+          String passwort, LocalDate geburtstag, Fakultaet fakultaet,
           String strasse, int hausnummer, String ort, String plz, String telefonnummer) {
         super(vorname, nachname, eMail, benutzername, passwort, geburtstag, fakultaet);
         this.strasse = strasse;

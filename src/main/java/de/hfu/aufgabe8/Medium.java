@@ -2,9 +2,8 @@ package de.hfu.aufgabe8;
 
 import java.time.LocalDate;
 
-public abstract class Medium
-{
-    private Standort Standort;
+public abstract class Medium {
+    private Standort standort;
     private int id;
     private String titel;
     private String autor;
@@ -17,8 +16,7 @@ public abstract class Medium
     private int verlaengerungsdauer;
     private boolean isVorbestellt;
 
-    Medium(String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache)
-    {
+    Medium(String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache) {
         this.titel = titel;
         this.autor = autor;
         this.isbn = isbn;
@@ -28,4 +26,17 @@ public abstract class Medium
         this.verlag = verlag;
         this.sprache = sprache;
     }
+
+    public Standort getStandort() {
+        return standort;
+    }
+
+    public void setStandort(Standort standort) {
+        this.standort = standort;
+    }
+
+    public String getTitel() {
+        return titel;
+    }
+
 }

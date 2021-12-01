@@ -1,8 +1,6 @@
 package de.hfu.aufgabe8;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,7 +34,7 @@ public class Main {
 
         Kunde kunde1 = new Kunde("Max", "Mustermann",
                 "mm@test.de", "max.muster",
-                "passwort", new Date(2000, Calendar.DECEMBER, 24),
+                "passwort", LocalDate.of(2000, 12, 24),
                 Fakultaet.Informatik, "Musterstrasse", 1,
                 "Nordpol", "00001", "08002222222");
 
@@ -44,17 +42,17 @@ public class Main {
 
         Kunde kunde2 = new Kunde("Otto", "Mustermann",
                 "om@test.de", "otto.muster",
-                "passwort", new Date(2000, Calendar.DECEMBER, 27),
+                "passwort", LocalDate.of(2000, 12, 27),
                 Fakultaet.Informatik, "Musterstrasse", 1,
                 "Nordpol", "00001", "08002222222");
         nutzerverwaltung.nutzerHinzufuegen(kunde2);
 
-        System.out.println("Kunde 1 leiht 3 Medien aus:");
+        System.out.println("\nKunde 1 leiht 3 Medien aus:");
         medienverwaltung.mediumAusleihen(medium1, kunde1);
         medienverwaltung.mediumAusleihen(medium2, kunde1);
         medienverwaltung.mediumAusleihen(medium3, kunde1);
 
-        System.out.println("Kunde 2 leiht 5 Medien aus:");
+        System.out.println("\nKunde 2 leiht 5 Medien aus:");
         medienverwaltung.mediumAusleihen(medium5, kunde2);
         medienverwaltung.mediumAusleihen(medium7, kunde2);
         medienverwaltung.mediumAusleihen(medium8, kunde2);

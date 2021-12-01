@@ -2,17 +2,14 @@ package de.hfu.aufgabe8;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class Medienverwaltung
-{
+public class Medienverwaltung {
     private List<Medium> mediumList;
     private List<Ausleihe> ausleiheList;
     private List<Standort> standortList;
 
-    Medienverwaltung()
-    {
+    Medienverwaltung() {
         mediumList = new ArrayList<>();
         ausleiheList = new ArrayList<>();
         standortList = new ArrayList<>();
@@ -22,11 +19,11 @@ public class Medienverwaltung
      * @param medium
      * @param nutzer
      */
-    public void mediumAusleihen(Medium medium, Nutzer nutzer)
-    {
+    public void mediumAusleihen(Medium medium, Nutzer nutzer) {
         LocalDate aktuellesDatum = LocalDate.now();
         LocalDate rueckgabeDatum = LocalDate.now().plusMonths(1);
         ausleiheList.add(new Ausleihe(medium, nutzer, aktuellesDatum, rueckgabeDatum, null));
+        System.out.println("Medium: " + medium.getTitel() + " von: " + nutzer.getBenutzername() + " ausgeliehen.");
     }
 
     /**
@@ -51,8 +48,10 @@ public class Medienverwaltung
      * @param standort
      */
     public void mediumErfassen(Medium medium, Standort standort) {
-        // TODO - implement Medienverwaltung.mediumErfassen
-        throw new UnsupportedOperationException();
+        mediumList.add(medium);
+        medium.setStandort(standort);
+        System.out.println("Medium " + medium.getTitel() + " wurde erfasst.");
+
     }
 
     /**
