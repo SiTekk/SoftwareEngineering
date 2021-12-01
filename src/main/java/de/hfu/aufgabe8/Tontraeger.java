@@ -13,5 +13,4 @@ public class Tontraeger extends Medium
         this.dauer = dauer;
         this.sprecher = sprecher;
     }
-
 }

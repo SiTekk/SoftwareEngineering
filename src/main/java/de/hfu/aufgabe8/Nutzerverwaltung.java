@@ -5,6 +5,7 @@ import java.util.*;
 public class Nutzerverwaltung {
 
     private Collection<Nutzer> nutzerList;
+    private List<Mahnung> MahnungList;
 
     public Nutzerverwaltung() {
         nutzerList = new ArrayList<>();

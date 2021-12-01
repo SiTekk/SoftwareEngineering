@@ -1,18 +1,19 @@
 package de.hfu.aufgabe8;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 public class Mahnung {
-    private static List<Mahnung> MahnungList;
-
     private Ausleihe ausleihe;
     private int id;
     private String grund;
-    private Date frist;
-    /**
-     * Abgeschlossen, Ueberfaellig, Laufend ...
-     */
+    private LocalDate frist;
     private MahnungStati status;
 
+    Mahnung(Ausleihe ausleihe, String grund, LocalDate frist, MahnungStati status)
+    {
+        this.ausleihe = ausleihe;
+        this.grund = grund;
+        this.frist = frist;
+        this.status = status;
+    }
 }
