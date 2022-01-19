@@ -1,4 +1,4 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.entities;
 
 public enum Genre {
     Informatik,

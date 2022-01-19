@@ -1,4 +1,4 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.entities;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -22,10 +22,9 @@ public abstract class Nutzer {
     private int alter;
     private Fakultaet fakultaet;
 
-    Nutzer() {
-    }
+    public Nutzer() { }
 
-    Nutzer(String vorname, String nachname, String eMail, String benutzername, String passwort, LocalDate geburtstag, Fakultaet fakultaet) {
+    public Nutzer(String vorname, String nachname, String eMail, String benutzername, String passwort, LocalDate geburtstag, Fakultaet fakultaet) {
         this.vorname = vorname;
         this.nachname = nachname;
         this.eMail = eMail;

@@ -1,4 +1,4 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.entities;
 
 import java.time.LocalDate;
 
@@ -16,7 +16,7 @@ public abstract class Medium {
     private int verlaengerungsdauer;
     private boolean isVorbestellt;
 
-    Medium(String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache) {
+    public Medium(String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache) {
         this.titel = titel;
         this.autor = autor;
         this.isbn = isbn;

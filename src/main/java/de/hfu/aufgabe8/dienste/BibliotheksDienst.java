@@ -1,4 +1,6 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.dienste;
+
+import de.hfu.aufgabe8.entities.*;
 
 import java.time.LocalDate;
 

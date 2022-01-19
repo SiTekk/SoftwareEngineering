@@ -1,4 +1,9 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.dienste;
+
+import de.hfu.aufgabe8.entities.Ausleihe;
+import de.hfu.aufgabe8.entities.Medium;
+import de.hfu.aufgabe8.entities.Nutzer;
+import de.hfu.aufgabe8.entities.Standort;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,7 +14,7 @@ public class Medienverwaltung {
     private List<Ausleihe> ausleiheList;
     private List<Standort> standortList;
 
-    Medienverwaltung() {
+    public Medienverwaltung() {
         mediumList = new ArrayList<>();
         ausleiheList = new ArrayList<>();
         standortList = new ArrayList<>();

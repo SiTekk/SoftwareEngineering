@@ -1,4 +1,9 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.entities;
+
+import de.hfu.aufgabe8.entities.AusleiheStati;
+import de.hfu.aufgabe8.entities.Mahnung;
+import de.hfu.aufgabe8.entities.Medium;
+import de.hfu.aufgabe8.entities.Nutzer;
 
 import java.time.LocalDate;
 
@@ -13,7 +18,7 @@ public class Ausleihe {
     private int anzahlVerlaengert;
     private AusleiheStati status;
 
-    Ausleihe(Medium gebuchtesMedium, Nutzer ausleiher, LocalDate ausleihdatum, LocalDate rueckgabedatum, Mahnung mahnung)
+    public Ausleihe(Medium gebuchtesMedium, Nutzer ausleiher, LocalDate ausleihdatum, LocalDate rueckgabedatum, Mahnung mahnung)
     {
         this.gebuchtesMedium = gebuchtesMedium;
         this.ausleiher = ausleiher;

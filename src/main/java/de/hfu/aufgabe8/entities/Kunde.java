@@ -1,4 +1,4 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.entities;
 
 import java.time.LocalDate;
 
@@ -10,11 +10,11 @@ public class Kunde extends Nutzer {
     private String plz;
     private String telefonnummer;
 
-    Kunde() {
+    public Kunde() {
         super();
     }
 
-    Kunde(String vorname, String nachname, String eMail, String benutzername,
+    public Kunde(String vorname, String nachname, String eMail, String benutzername,
           String passwort, LocalDate geburtstag, Fakultaet fakultaet,
           String strasse, int hausnummer, String ort, String plz, String telefonnummer) {
         super(vorname, nachname, eMail, benutzername, passwort, geburtstag, fakultaet);

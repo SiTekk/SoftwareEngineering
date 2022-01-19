@@ -1,4 +1,8 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.dienste;
+
+import de.hfu.aufgabe8.entities.Ausleihe;
+import de.hfu.aufgabe8.entities.Mahnung;
+import de.hfu.aufgabe8.entities.Nutzer;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package de.hfu.aufgabe8;
+package de.hfu.aufgabe8.userinterface;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class Userinterface
 
             switch (option) {
                 case 1:
-                    //Kunde Anlegen
+                    // Kunde anlegen
                     System.out.println("Kunde wurde erfasst!\n\n");
                 case 2:
                     //Medium erfassen
