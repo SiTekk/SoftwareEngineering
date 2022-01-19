@@ -28,4 +28,64 @@ public class Ausleihe {
         anzahlVerlaengert = 0;
         status = AusleiheStati.Laufend;
     }
+
+    public Mahnung getMahnung()
+    {
+        return mahnung;
+    }
+
+    public void setMahnung(Mahnung mahnung)
+    {
+        this.mahnung = mahnung;
+    }
+
+    public LocalDate getRueckgabedatum()
+    {
+        return rueckgabedatum;
+    }
+
+    public void setRueckgabedatum(LocalDate rueckgabedatum)
+    {
+        this.rueckgabedatum = rueckgabedatum;
+    }
+
+    public int getAnzahlVerlaengert()
+    {
+        return anzahlVerlaengert;
+    }
+
+    public void setAnzahlVerlaengert(int anzahlVerlaengert)
+    {
+        this.anzahlVerlaengert = anzahlVerlaengert;
+    }
+
+    public AusleiheStati getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(AusleiheStati status)
+    {
+        this.status = status;
+    }
+
+    public Nutzer getAusleiher()
+    {
+        return ausleiher;
+    }
+
+    public Medium getGebuchtesMedium()
+    {
+        return gebuchtesMedium;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public LocalDate getAusleihdatum()
+    {
+        return ausleihdatum;
+    }
 }

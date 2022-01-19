@@ -11,11 +11,6 @@ public abstract class Nutzer {
     private String vorname;
     private String nachname;
     private String eMail;
-
-    public String getBenutzername() {
-        return benutzername;
-    }
-
     private String benutzername;
     private String passwort;
     private LocalDate geburtstag;
@@ -35,8 +30,57 @@ public abstract class Nutzer {
         this.fakultaet = fakultaet;
     }
 
+    public String getBenutzername() {
+        return benutzername;
+    }
+
     private int getAlter(LocalDate geburtstag) {
         Period period = Period.between(geburtstag, LocalDate.now());
         return period.getYears();
+    }
+
+    public Collection<Ausleihe> getAusleihen()
+    {
+        return ausleihen;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public String getVorname()
+    {
+        return vorname;
+    }
+
+    public String getNachname()
+    {
+        return nachname;
+    }
+
+    public String geteMail()
+    {
+        return eMail;
+    }
+
+    public String getPasswort()
+    {
+        return passwort;
+    }
+
+    public LocalDate getGeburtstag()
+    {
+        return geburtstag;
+    }
+
+    public int getAlter()
+    {
+        return alter;
+    }
+
+    public Fakultaet getFakultaet()
+    {
+        return fakultaet;
     }
 }

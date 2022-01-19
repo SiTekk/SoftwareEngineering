@@ -9,12 +9,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Medienverwaltung {
+public class Medienverwaltung implements Medieninterface
+{
     private List<Medium> mediumList;
     private List<Ausleihe> ausleiheList;
     private List<Standort> standortList;
 
-    public Medienverwaltung() {
+    protected Medienverwaltung() {
         mediumList = new ArrayList<>();
         ausleiheList = new ArrayList<>();
         standortList = new ArrayList<>();

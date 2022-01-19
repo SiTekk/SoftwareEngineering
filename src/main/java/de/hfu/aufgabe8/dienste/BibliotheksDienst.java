@@ -6,8 +6,8 @@ import java.time.LocalDate;
 
 public class BibliotheksDienst
 {
-    public static Nutzerverwaltung nutzerverwaltung;
-    public static Medienverwaltung medienverwaltung;
+    private static Nutzerverwaltung nutzerverwaltung;
+    private static Medienverwaltung medienverwaltung;
 
     private static boolean initialized = false;
 
@@ -42,15 +42,35 @@ public class BibliotheksDienst
             medienverwaltung.mediumErfassen(medium9, hfu_Bibliothek);
             medienverwaltung.mediumErfassen(medium10, hfu_Bibliothek);
 
-            Kunde kunde1 = new Kunde("Max", "Mustermann",
-                    "mm@test.de", "max.muster",
-                    "passwort", LocalDate.of(2000, 12, 24),
-                    Fakultaet.Informatik, "Musterstrasse", 1,
-                    "Nordpol", "00001", "08002222222");
 
-            nutzerverwaltung.nutzerHinzufuegen(kunde1);
+            nutzerverwaltung.nutzerHinzufuegen("Donald", "Duck", "dduck", "1234" );
 
             initialized = true;
+
+            /*
+            System.out.println("\nKunde 2 leiht 5 Medien aus:");
+            medienverwaltung.mediumAusleihen(medium5, kunde2);
+            medienverwaltung.mediumAusleihen(medium7, kunde2);
+            medienverwaltung.mediumAusleihen(medium8, kunde2);
+            medienverwaltung.mediumAusleihen(medium9, kunde2);
+            medienverwaltung.mediumAusleihen(medium10, kunde2);
+            */
         }
+    }
+
+    public static Nutzerinterface getNutzerinterface()
+    {
+        if(!initialized)
+            throw new NullPointerException("Bilbiotheksdienst wurde noch nicht initialisiert!");
+        else
+            return nutzerverwaltung;
+    }
+
+    public static Medieninterface getMedieninterface()
+    {
+        if(!initialized)
+            throw new NullPointerException("Bilbiotheksdienst wurde noch nicht initialisiert!");
+        else
+            return medienverwaltung;
     }
 }

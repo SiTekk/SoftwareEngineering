@@ -1,11 +1,34 @@
 package de.hfu.aufgabe8.userinterface;
 
+import de.hfu.aufgabe8.dienste.BibliotheksDienst;
+import de.hfu.aufgabe8.dienste.Medieninterface;
+
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class Userinterface
 {
+
+    private static boolean login()
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Bitte loggen Sie sich ein:");
+
+        System.out.print("Benutzername: ");
+        String username = sc.nextLine();
+
+        System.out.print("Password: ");
+        String password = sc.nextLine();
+
+        return BibliotheksDienst.getNutzerinterface().login(username, password);
+    }
+
     public static void startProgramLoop()
     {
+        if (!login())
+            return;
+
         while (true)
         {
             System.out.println("--------------------------\n\n");

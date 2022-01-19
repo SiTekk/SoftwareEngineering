@@ -14,8 +14,8 @@ public class Kunde extends Nutzer {
         super();
     }
 
-    public Kunde(String vorname, String nachname, String eMail, String benutzername,
-          String passwort, LocalDate geburtstag, Fakultaet fakultaet,
+    public Kunde(String vorname, String nachname, String benutzername,
+          String passwort, String eMail, LocalDate geburtstag, Fakultaet fakultaet,
           String strasse, int hausnummer, String ort, String plz, String telefonnummer) {
         super(vorname, nachname, eMail, benutzername, passwort, geburtstag, fakultaet);
         this.strasse = strasse;

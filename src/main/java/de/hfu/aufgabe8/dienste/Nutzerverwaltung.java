@@ -1,82 +1,68 @@
 package de.hfu.aufgabe8.dienste;
 
-import de.hfu.aufgabe8.entities.Ausleihe;
-import de.hfu.aufgabe8.entities.Mahnung;
-import de.hfu.aufgabe8.entities.Nutzer;
+import de.hfu.aufgabe8.entities.*;
 
+import java.time.LocalDate;
 import java.util.*;
 
-public class Nutzerverwaltung {
+public class Nutzerverwaltung implements Nutzerinterface {
 
     private Collection<Nutzer> nutzerList;
     private List<Mahnung> MahnungList;
 
-    public Nutzerverwaltung() {
+    protected Nutzerverwaltung() {
         nutzerList = new ArrayList<>();
     }
 
-    /**
-     * @param nutzer
-     */
+    @Override
     public void nutzerEntfernen(Nutzer nutzer) {
         nutzerList.remove(nutzer);
     }
 
-    /**
-     * @param nutzer
-     */
+    @Override
     public void nutzerAnpassen(Nutzer nutzer) {
         // TODO - implement Nutzerverwaltung.nutzerAnpassen
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * @param nutzer
-     */
-    public void nutzerHinzufuegen(Nutzer nutzer) {
-        if (nutzerList == null) {
-            nutzerList = new ArrayList<>();
-        }
-        nutzerList.add(nutzer);
+    @Override
+    public void nutzerHinzufuegen(String vorname, String nachname, String benutzername, String passwort)
+    {
+        nutzerList.add(new Kunde(vorname, nachname, benutzername, passwort,"test@holz.de", LocalDate.of(2000, 12, 27), Fakultaet.Informatik, "Musterstrasse", 1, "Nordpol", "00001", "08002222222"));
     }
 
-    /**
-     * @param nutzer
-     */
+    @Override
     public void nutzerdatenUeberpruefen(Nutzer nutzer) {
         // TODO - implement Nutzerverwaltung.nutzerdatenÜberprüfen
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * @param mahnung
-     * @param ausleihe
-     */
+    @Override
     public void mahnungSenden(Mahnung mahnung, Ausleihe ausleihe) {
-        // TODO - implement Nutzerverwaltung.mahnungSenden
-        throw new UnsupportedOperationException();
+        ausleihe.setMahnung(mahnung);
     }
 
-    /**
-     * @param mahnung
-     */
     public void mahnungAendern(Mahnung mahnung) {
         // TODO - implement Nutzerverwaltung.mahnungÄndern
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * @param benutzername
-     * @param passwort
-     */
-    public void login(String benutzername, byte[] passwort) {
+    @Override
+    public boolean login(String benutzername, String passwort)
+    {
+       for(Nutzer n : nutzerList)
+       {
+           if(n.getBenutzername().equals(benutzername) && n.getPasswort().equals(passwort))
+               return true;
+       }
+
+       return false;
+    }
+
+    @Override
+    public void logout()
+    {
         // TODO - implement Nutzerverwaltung.login
         throw new UnsupportedOperationException();
     }
-
-    public void logout() {
-        // TODO - implement Nutzerverwaltung.logout
-        throw new UnsupportedOperationException();
-    }
-
 }
