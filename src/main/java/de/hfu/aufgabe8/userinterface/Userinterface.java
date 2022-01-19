@@ -45,30 +45,39 @@ public class Userinterface
             Scanner sc = new Scanner(System.in);
             int option = sc.nextInt();
 
-            switch (option) {
+            switch (option)
+            {
                 case 1:
                     // Kunde anlegen
+                    Kundeninterface.KundeAnlegen();
                     System.out.println("Kunde wurde erfasst!\n\n");
+                    break;
                 case 2:
                     //Medium erfassen
+                    Bibliotheksinterface.MediumErfassen();
                     System.out.println("Medium wurde erfasst!\n\n");
+                    break;
 
                 case 3:
                     //Ausleihen
                     System.out.println("Ausleihe wurde erfasst!\n\n");
+                    break;
                 case 4:
                     //Verlängern
                     System.out.println("Verlängerung wurde erfasst!\n\n");
+                    break;
 
                 case 5:
                     //Zurückgeben
                     System.out.println("Rückgabe wurde erfasst!\n\n");
+                    break;
 
                 case 0:
                     System.out.println("Vielen Dank für die Nutzung der Software, bis bald!\n\n");
                     break;
                 default:
                     System.out.println("Option ist nicht bekannt!\n\n");
+                    break;
             }
         }
     }
