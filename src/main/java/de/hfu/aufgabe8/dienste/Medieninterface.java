@@ -14,7 +14,4 @@ public interface Medieninterface
     public void mediumLoeschen(Medium medium);
     public void mediumVerlaengern(Medium medium);
     public Medium[] medienListeErzeugen(String suchString);
-    public void lagerbestandAktualisieren();
-    public void lagerbestandPruefen();
-    public void ausleihstatistikAnsehen();
 }

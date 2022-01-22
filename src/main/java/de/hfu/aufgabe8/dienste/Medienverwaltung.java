@@ -83,20 +83,4 @@ public class Medienverwaltung implements Medieninterface
         // TODO - implement Medienverwaltung.medienListeErzeugen
         throw new UnsupportedOperationException();
     }
-
-    public void lagerbestandAktualisieren() {
-        // TODO - implement Medienverwaltung.lagerbestandAktualisieren
-        throw new UnsupportedOperationException();
-    }
-
-    public void lagerbestandPruefen() {
-        // TODO - implement Medienverwaltung.lagerbestandPr�fen
-        throw new UnsupportedOperationException();
-    }
-
-    public void ausleihstatistikAnsehen() {
-        // TODO - implement Medienverwaltung.ausleihstatistikAnsehen
-        throw new UnsupportedOperationException();
-    }
-
 }
