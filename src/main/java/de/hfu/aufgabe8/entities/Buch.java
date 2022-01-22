@@ -10,9 +10,9 @@ public class Buch extends Medium {
      */
     private String art;
 
-    public Buch(String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache, int seitenzahl, String art)
+    public Buch(int id, String titel, String autor, String isbn, String beschreibung, Genre genre, LocalDate erscheinungsdatum, String verlag, String sprache, int seitenzahl, String art)
     {
-        super(titel,autor,isbn,beschreibung,genre,erscheinungsdatum,verlag,sprache);
+        super(id, titel,autor,isbn,beschreibung,genre,erscheinungsdatum,verlag,sprache);
         this.seitenzahl = seitenzahl;
         this.art = art;
     }
