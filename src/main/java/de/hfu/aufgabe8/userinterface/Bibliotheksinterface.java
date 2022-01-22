@@ -52,6 +52,12 @@ public class Bibliotheksinterface
         BibliotheksDienst.getMedieninterface().mediumZurueckgeben(medium);
     }
 
+    public static void MediumVerlaengern()
+    {
+        Medium medium = MediumAuswaehlen(BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().iterator());
+        BibliotheksDienst.getMedieninterface().mediumVerlaengern(medium);
+    }
+
     public static Medium MediumAuswaehlen(Iterator iterator)
     {
         while (iterator.hasNext())

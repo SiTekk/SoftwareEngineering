@@ -65,11 +65,13 @@ public class Userinterface
                     break;
                 case 4:
                     //Verlängern
+                    Bibliotheksinterface.MediumVerlaengern();
                     System.out.println("Verlängerung wurde erfasst!\n\n");
                     break;
 
                 case 5:
                     //Zurückgeben
+                    Bibliotheksinterface.MediumZurueckgeben();
                     System.out.println("Rückgabe wurde erfasst!\n\n");
                     break;
 

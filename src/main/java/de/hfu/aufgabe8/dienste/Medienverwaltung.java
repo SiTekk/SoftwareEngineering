@@ -26,16 +26,16 @@ public class Medienverwaltung implements Medieninterface
         LocalDate aktuellesDatum = LocalDate.now();
         LocalDate rueckgabeDatum = LocalDate.now().plusMonths(1);
 
-        boolean zulaessig = ausleiheList.contains(medium) || nutzer.getAusleihen().size() >= maxAusleihen;
+        boolean zulaessig = getAusleiheByMedium(medium) == null && nutzer.getAusleihen().size() < maxAusleihen;
 
-        if(!zulaessig)
+        if(zulaessig)
         {
             Ausleihe ausleihe = new Ausleihe(medium, nutzer, aktuellesDatum, rueckgabeDatum, null);
             ausleiheList.add(ausleihe);
             nutzer.getAusleihen().add(ausleihe);
         }
 
-        return !zulaessig;
+        return zulaessig;
     }
 
     @Override
