@@ -73,7 +73,10 @@ public class Nutzerverwaltung implements Nutzerinterface {
        for(Nutzer n : nutzerList)
        {
            if(n.getBenutzername().equals(benutzername) && n.getPasswort().equals(passwort))
+           {
+               loggedInUser = n;
                return true;
+           }
        }
 
        return false;
