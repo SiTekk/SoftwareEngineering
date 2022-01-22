@@ -6,7 +6,7 @@ import java.util.*;
 
 public abstract class Nutzer {
 
-    Collection<Ausleihe> ausleihen;
+    List<Ausleihe> ausleihen;
     private int id;
     private String vorname;
     private String nachname;
@@ -17,9 +17,9 @@ public abstract class Nutzer {
     private int alter;
     private Fakultaet fakultaet;
 
-    public Nutzer() { }
-
     public Nutzer(int id, String vorname, String nachname, String eMail, String benutzername, String passwort, LocalDate geburtstag, Fakultaet fakultaet) {
+        ausleihen = new ArrayList<>();
+
         this.id = id;
         this.vorname = vorname;
         this.nachname = nachname;

@@ -2,6 +2,7 @@ package de.hfu.aufgabe8.userinterface;
 
 import de.hfu.aufgabe8.dienste.BibliotheksDienst;
 import de.hfu.aufgabe8.dienste.Medieninterface;
+import de.hfu.aufgabe8.dienste.Nutzerinterface;
 import de.hfu.aufgabe8.entities.Medium;
 import de.hfu.aufgabe8.entities.Nutzer;
 
@@ -36,14 +37,16 @@ public class Bibliotheksinterface
 
     public static void MeidumAusleihen()
     {
-        Medium medium = MediumAuswaehlen();
-        BibliotheksDienst.getMedieninterface().mediumAusleihen(medium, BibliotheksDienst.getNutzerinterface().getLoggedInUser());
+        Medium medium = MediumAuswaehlen(BibliotheksDienst.getMedieninterface().getMedienListeIterator());
+        Nutzer nutzer = BibliotheksDienst.getNutzerinterface().getLoggedInUser();
+        if(BibliotheksDienst.getMedieninterface().mediumAusleihen(medium, nutzer))
+            System.out.println("Medium: " + medium.getTitel() + " von: " + nutzer.getBenutzername() + " ausgeliehen.");
+        else
+            System.out.println("Medium ist aktuell Ausgeliehen.");
     }
 
-    public static Medium MediumAuswaehlen()
+    public static Medium MediumAuswaehlen(Iterator<Medium> iterator)
     {
-        Iterator<Medium> iterator = BibliotheksDienst.getMedieninterface().getMedienListeIterator();
-
         while (iterator.hasNext())
         {
             Medium m = iterator.next();

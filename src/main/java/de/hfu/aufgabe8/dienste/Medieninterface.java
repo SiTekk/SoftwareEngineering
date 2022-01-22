@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public interface Medieninterface
 {
-    public void mediumAusleihen(Medium medium, Nutzer nutzer);
+    public boolean mediumAusleihen(Medium medium, Nutzer nutzer);
     public void mediumAnfordern(Medium medium, Nutzer nutzer);
     public void mediumZurueckgeben(Ausleihe ausleihe);
     public void mediumErfassen(String titel, String autor, int typ);

@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Medienverwaltung implements Medieninterface
 {
+    private static final int maxAusleihen = 5;
     private List<Medium> mediumList;
     private List<Ausleihe> ausleiheList;
     private List<Standort> standortList;
@@ -19,11 +20,21 @@ public class Medienverwaltung implements Medieninterface
         standortList = new ArrayList<>();
     }
 
-    public void mediumAusleihen(Medium medium, Nutzer nutzer) {
+    public boolean mediumAusleihen(Medium medium, Nutzer nutzer)
+    {
         LocalDate aktuellesDatum = LocalDate.now();
         LocalDate rueckgabeDatum = LocalDate.now().plusMonths(1);
-        ausleiheList.add(new Ausleihe(medium, nutzer, aktuellesDatum, rueckgabeDatum, null));
-        System.out.println("Medium: " + medium.getTitel() + " von: " + nutzer.getBenutzername() + " ausgeliehen.");
+
+        boolean zulaessig = ausleiheList.contains(medium) || nutzer.getAusleihen().size() >= maxAusleihen;
+
+        if(!zulaessig)
+        {
+            Ausleihe ausleihe = new Ausleihe(medium, nutzer, aktuellesDatum, rueckgabeDatum, null);
+            ausleiheList.add(ausleihe);
+            nutzer.getAusleihen().add(ausleihe);
+        }
+
+        return !zulaessig;
     }
 
     public void mediumAnfordern(Medium medium, Nutzer nutzer) {
@@ -31,9 +42,10 @@ public class Medienverwaltung implements Medieninterface
         throw new UnsupportedOperationException();
     }
 
-    public void mediumZurueckgeben(Ausleihe ausleihe) {
-        // TODO - implement Medienverwaltung.mediumZur�ckgeben
-        throw new UnsupportedOperationException();
+    public void mediumZurueckgeben(Ausleihe ausleihe)
+    {
+        ausleihe.getAusleiher().getAusleihen().remove(ausleihe);
+        ausleiheList.remove(ausleihe);
     }
 
     public void mediumErfassen(String titel, String autor, int typ)
@@ -61,9 +73,16 @@ public class Medienverwaltung implements Medieninterface
         throw new UnsupportedOperationException();
     }
 
-    public void mediumVerlaengern(Medium medium) {
-        // TODO - implement Medienverwaltung.mediumVerlaengern
-        throw new UnsupportedOperationException();
+    public void mediumVerlaengern(Medium medium)
+    {
+        for(Ausleihe a : ausleiheList)
+        {
+            if(a.getGebuchtesMedium().getId() == medium.getId())
+            {
+                a.setRueckgabedatum(a.getRueckgabedatum().plusMonths(1));
+                a.setAnzahlVerlaengert(a.getAnzahlVerlaengert() + 1);
+            }
+        }
     }
 
     @Override
