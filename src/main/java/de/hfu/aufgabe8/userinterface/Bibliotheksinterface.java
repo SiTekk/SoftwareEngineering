@@ -1,8 +1,6 @@
 package de.hfu.aufgabe8.userinterface;
 
 import de.hfu.aufgabe8.dienste.BibliotheksDienst;
-import de.hfu.aufgabe8.dienste.Medieninterface;
-import de.hfu.aufgabe8.dienste.Nutzerinterface;
 import de.hfu.aufgabe8.entities.Ausleihe;
 import de.hfu.aufgabe8.entities.Medium;
 import de.hfu.aufgabe8.entities.Nutzer;
