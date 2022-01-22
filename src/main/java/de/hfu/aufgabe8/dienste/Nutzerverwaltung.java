@@ -15,14 +15,29 @@ public class Nutzerverwaltung implements Nutzerinterface {
     }
 
     @Override
-    public void nutzerEntfernen(Nutzer nutzer) {
-        nutzerList.remove(nutzer);
+    public void nutzerEntfernen(int id)
+    {
+        Nutzer nutzer = getNutzerById(id);
+
+        if(nutzer != null)
+            nutzerList.remove(nutzer);
     }
 
     @Override
-    public void nutzerAnpassen(Nutzer nutzer) {
-        // TODO - implement Nutzerverwaltung.nutzerAnpassen
-        throw new UnsupportedOperationException();
+    public Nutzer getNutzerById(int id)
+    {
+        Nutzer nutzer = null;
+
+        for(Nutzer n : nutzerList)
+        {
+            if(n.getId() == id)
+            {
+                nutzer = n;
+                break;
+            }
+        }
+
+        return nutzer;
     }
 
     @Override

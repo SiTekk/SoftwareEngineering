@@ -6,8 +6,8 @@ import de.hfu.aufgabe8.entities.Nutzer;
 
 public interface Nutzerinterface
 {
-    public void nutzerEntfernen(Nutzer nutzer);
-    public void nutzerAnpassen(Nutzer nutzer);
+    public void nutzerEntfernen(int id);
+    public Nutzer getNutzerById(int id);
     public void nutzerHinzufuegen(String vorname, String nachname, String benutzername, String passwort);
     public void nutzerdatenUeberpruefen(Nutzer nutzer);
     public void mahnungSenden(Mahnung mahnung, Ausleihe ausleihe);
