@@ -19,7 +19,8 @@ public abstract class Nutzer {
 
     public Nutzer() { }
 
-    public Nutzer(String vorname, String nachname, String eMail, String benutzername, String passwort, LocalDate geburtstag, Fakultaet fakultaet) {
+    public Nutzer(int id, String vorname, String nachname, String eMail, String benutzername, String passwort, LocalDate geburtstag, Fakultaet fakultaet) {
+        this.id = id;
         this.vorname = vorname;
         this.nachname = nachname;
         this.eMail = eMail;

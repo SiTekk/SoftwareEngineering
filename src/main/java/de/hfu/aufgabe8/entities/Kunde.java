@@ -14,10 +14,10 @@ public class Kunde extends Nutzer {
         super();
     }
 
-    public Kunde(String vorname, String nachname, String benutzername,
+    public Kunde(int id, String vorname, String nachname, String benutzername,
           String passwort, String eMail, LocalDate geburtstag, Fakultaet fakultaet,
           String strasse, int hausnummer, String ort, String plz, String telefonnummer) {
-        super(vorname, nachname, eMail, benutzername, passwort, geburtstag, fakultaet);
+        super(id, vorname, nachname, eMail, benutzername, passwort, geburtstag, fakultaet);
         this.strasse = strasse;
         this.hausnummer = hausnummer;
         this.ort = ort;

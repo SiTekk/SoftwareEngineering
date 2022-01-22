@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Nutzerverwaltung implements Nutzerinterface {
 
-    private Collection<Nutzer> nutzerList;
+    private List<Nutzer> nutzerList;
     private List<Mahnung> MahnungList;
 
     protected Nutzerverwaltung() {
@@ -28,7 +28,11 @@ public class Nutzerverwaltung implements Nutzerinterface {
     @Override
     public void nutzerHinzufuegen(String vorname, String nachname, String benutzername, String passwort)
     {
-        nutzerList.add(new Kunde(vorname, nachname, benutzername, passwort,"test@holz.de", LocalDate.of(2000, 12, 27), Fakultaet.Informatik, "Musterstrasse", 1, "Nordpol", "00001", "08002222222"));
+        int id = 0;
+        if(nutzerList.size() > 0)
+             id = nutzerList.get(nutzerList.size() - 1).getId() + 1;
+
+        nutzerList.add(new Kunde(id, vorname, nachname, benutzername, passwort,"test@holz.de", LocalDate.of(2000, 12, 27), Fakultaet.Informatik, "Musterstrasse", 1, "Nordpol", "00001", "08002222222"));
     }
 
     @Override
