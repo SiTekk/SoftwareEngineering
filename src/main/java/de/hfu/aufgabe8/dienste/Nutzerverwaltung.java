@@ -41,6 +41,12 @@ public class Nutzerverwaltung implements Nutzerinterface {
     }
 
     @Override
+    public Iterator<Nutzer> getNutzerIterator()
+    {
+        return nutzerList.listIterator();
+    }
+
+    @Override
     public void nutzerHinzufuegen(String vorname, String nachname, String benutzername, String passwort)
     {
         int id = 0;
@@ -48,12 +54,6 @@ public class Nutzerverwaltung implements Nutzerinterface {
              id = nutzerList.get(nutzerList.size() - 1).getId() + 1;
 
         nutzerList.add(new Kunde(id, vorname, nachname, benutzername, passwort,"test@holz.de", LocalDate.of(2000, 12, 27), Fakultaet.Informatik, "Musterstrasse", 1, "Nordpol", "00001", "08002222222"));
-    }
-
-    @Override
-    public void nutzerdatenUeberpruefen(Nutzer nutzer) {
-        // TODO - implement Nutzerverwaltung.nutzerdatenÜberprüfen
-        throw new UnsupportedOperationException();
     }
 
     @Override

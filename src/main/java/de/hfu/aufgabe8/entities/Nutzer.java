@@ -84,4 +84,10 @@ public abstract class Nutzer {
     {
         return fakultaet;
     }
+
+    @Override
+    public String toString()
+    {
+        return id + ": " + vorname + " " + nachname;
+    }
 }
