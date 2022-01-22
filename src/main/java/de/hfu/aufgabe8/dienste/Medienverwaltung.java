@@ -20,6 +20,7 @@ public class Medienverwaltung implements Medieninterface
         standortList = new ArrayList<>();
     }
 
+    @Override
     public boolean mediumAusleihen(Medium medium, Nutzer nutzer)
     {
         LocalDate aktuellesDatum = LocalDate.now();
@@ -37,17 +38,28 @@ public class Medienverwaltung implements Medieninterface
         return !zulaessig;
     }
 
-    public void mediumAnfordern(Medium medium, Nutzer nutzer) {
+    @Override
+    public void mediumAnfordern(Medium medium, Nutzer nutzer)
+    {
         // TODO - implement Medienverwaltung.mediumAnfordern
         throw new UnsupportedOperationException();
     }
 
-    public void mediumZurueckgeben(Ausleihe ausleihe)
+    @Override
+    public boolean mediumZurueckgeben(Medium medium)
     {
-        ausleihe.getAusleiher().getAusleihen().remove(ausleihe);
-        ausleiheList.remove(ausleihe);
+        Ausleihe ausleihe = getAusleiheByMedium(medium);
+
+        if(ausleihe != null)
+        {
+            ausleihe.getAusleiher().getAusleihen().remove(ausleihe);
+            ausleiheList.remove(ausleihe);
+        }
+
+        return ausleihe != null;
     }
 
+    @Override
     public void mediumErfassen(String titel, String autor, int typ)
     {
         int id = 0;
@@ -68,21 +80,24 @@ public class Medienverwaltung implements Medieninterface
         mediumList.add(medium);
     }
 
+    @Override
     public void mediumLoeschen(Medium medium) {
         // TODO - implement Medienverwaltung.mediumL�schen
         throw new UnsupportedOperationException();
     }
 
-    public void mediumVerlaengern(Medium medium)
+    @Override
+    public boolean mediumVerlaengern(Medium medium)
     {
-        for(Ausleihe a : ausleiheList)
+        Ausleihe ausleihe = getAusleiheByMedium(medium);
+
+        if(ausleihe != null)
         {
-            if(a.getGebuchtesMedium().getId() == medium.getId())
-            {
-                a.setRueckgabedatum(a.getRueckgabedatum().plusMonths(1));
-                a.setAnzahlVerlaengert(a.getAnzahlVerlaengert() + 1);
-            }
+            ausleihe.setRueckgabedatum(ausleihe.getRueckgabedatum().plusMonths(1));
+            ausleihe.setAnzahlVerlaengert(ausleihe.getAnzahlVerlaengert() + 1);
         }
+
+        return ausleihe != null;
     }
 
     @Override
@@ -102,6 +117,24 @@ public class Medienverwaltung implements Medieninterface
         return medium;
     }
 
+    @Override
+    public Ausleihe getAusleiheByMedium(Medium medium)
+    {
+        Ausleihe ausleihe = null;
+
+        for(Ausleihe a : ausleiheList)
+        {
+            if (a.getGebuchtesMedium().getId() == medium.getId())
+            {
+                ausleihe = a;
+                break;
+            }
+        }
+
+        return ausleihe;
+    }
+
+    @Override
     public Iterator<Medium> getMedienListeIterator() {
         return mediumList.listIterator();
     }

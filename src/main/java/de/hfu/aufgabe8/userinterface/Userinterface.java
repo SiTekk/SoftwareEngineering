@@ -1,9 +1,7 @@
 package de.hfu.aufgabe8.userinterface;
 
 import de.hfu.aufgabe8.dienste.BibliotheksDienst;
-import de.hfu.aufgabe8.dienste.Medieninterface;
 
-import java.util.Formatter;
 import java.util.Scanner;
 
 public class Userinterface
@@ -26,10 +24,12 @@ public class Userinterface
 
     public static void startProgramLoop()
     {
+        boolean quit = false;
+
         if (!login())
             return;
 
-        while (true)
+        while (!quit)
         {
             System.out.println("--------------------------\n\n");
 
@@ -60,7 +60,7 @@ public class Userinterface
 
                 case 3:
                     //Ausleihen
-                    Bibliotheksinterface.MeidumAusleihen();
+                    Bibliotheksinterface.MediumAusleihen();
                     System.out.println("Ausleihe wurde erfasst!\n\n");
                     break;
                 case 4:
@@ -74,12 +74,16 @@ public class Userinterface
                     break;
 
                 case 0:
+                    quit = true;
                     System.out.println("Vielen Dank für die Nutzung der Software, bis bald!\n\n");
                     break;
+
                 default:
                     System.out.println("Option ist nicht bekannt!\n\n");
                     break;
             }
         }
+
+        BibliotheksDienst.getNutzerinterface().logout();
     }
 }
