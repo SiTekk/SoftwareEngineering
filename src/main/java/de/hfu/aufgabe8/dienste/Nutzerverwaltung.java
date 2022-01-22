@@ -9,6 +9,7 @@ public class Nutzerverwaltung implements Nutzerinterface {
 
     private List<Nutzer> nutzerList;
     private List<Mahnung> MahnungList;
+    private Nutzer loggedInUser;
 
     protected Nutzerverwaltung() {
         nutzerList = new ArrayList<>();
@@ -81,7 +82,12 @@ public class Nutzerverwaltung implements Nutzerinterface {
     @Override
     public void logout()
     {
-        // TODO - implement Nutzerverwaltung.login
-        throw new UnsupportedOperationException();
+        loggedInUser = null;
+    }
+
+    @Override
+    public Nutzer getLoggedInUser()
+    {
+        return loggedInUser;
     }
 }

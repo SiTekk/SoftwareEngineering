@@ -14,5 +14,6 @@ public interface Medieninterface
     public void mediumErfassen(String titel, String autor, int typ);
     public void mediumLoeschen(Medium medium);
     public void mediumVerlaengern(Medium medium);
+    public Medium getMediumById(int id);
     public Iterator<Medium> getMedienListeIterator();
 }

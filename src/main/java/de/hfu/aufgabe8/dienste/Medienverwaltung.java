@@ -66,6 +66,23 @@ public class Medienverwaltung implements Medieninterface
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public Medium getMediumById(int id)
+    {
+        Medium medium = null;
+
+        for(Medium m : mediumList)
+        {
+            if(m.getId() == id)
+            {
+                medium = m;
+                break;
+            }
+        }
+
+        return medium;
+    }
+
     public Iterator<Medium> getMedienListeIterator() {
         return mediumList.listIterator();
     }

@@ -1,7 +1,11 @@
 package de.hfu.aufgabe8.userinterface;
 
 import de.hfu.aufgabe8.dienste.BibliotheksDienst;
+import de.hfu.aufgabe8.dienste.Medieninterface;
+import de.hfu.aufgabe8.entities.Medium;
+import de.hfu.aufgabe8.entities.Nutzer;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Bibliotheksinterface
@@ -28,7 +32,28 @@ public class Bibliotheksinterface
         {
             System.out.println("Fehlerhafte Eingabe");
         }
+    }
 
+    public static void MeidumAusleihen()
+    {
+        Medium medium = MediumAuswaehlen();
+        BibliotheksDienst.getMedieninterface().mediumAusleihen(medium, BibliotheksDienst.getNutzerinterface().getLoggedInUser());
+    }
 
+    public static Medium MediumAuswaehlen()
+    {
+        Iterator<Medium> iterator = BibliotheksDienst.getMedieninterface().getMedienListeIterator();
+
+        while (iterator.hasNext())
+        {
+            Medium m = iterator.next();
+            System.out.println(m.toString());
+        }
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Bitte geben Sie die ID des Mediums ein:");
+        int id = sc.nextInt();
+
+        return BibliotheksDienst.getMedieninterface().getMediumById(id);
     }
 }

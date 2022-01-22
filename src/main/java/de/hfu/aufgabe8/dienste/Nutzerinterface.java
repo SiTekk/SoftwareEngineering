@@ -16,4 +16,5 @@ public interface Nutzerinterface
     public void mahnungAendern(Mahnung mahnung);
     public boolean login(String benutzername, String passwort);
     public void logout();
+    public Nutzer getLoggedInUser();
 }

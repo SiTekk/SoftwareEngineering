@@ -60,6 +60,7 @@ public class Userinterface
 
                 case 3:
                     //Ausleihen
+                    Bibliotheksinterface.MeidumAusleihen();
                     System.out.println("Ausleihe wurde erfasst!\n\n");
                     break;
                 case 4:
