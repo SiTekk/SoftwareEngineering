@@ -15,8 +15,8 @@ public class Bibliotheksinterface
     public static void MediumErfassen()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Typen: (1) Buch (2) Tontr‰ger");
-        System.out.print("W‰hlen Sie den Medientyp: ");
+        System.out.println("Typen: (1) Buch (2) Tontr√§ger");
+        System.out.print("W√§hlen Sie den Medientyp: ");
         int option = sc.nextInt();
 
         if (option == 1)
@@ -27,7 +27,7 @@ public class Bibliotheksinterface
         }
         else if (option == 2)
         {
-            //TODO Tontr‰ger anlegen
+            //TODO Tontr√§ger anlegen
 
         }
         else

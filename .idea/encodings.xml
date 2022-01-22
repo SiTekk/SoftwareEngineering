@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="PROJECT" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/dienste/BibliotheksDienst.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/dienste/Medieninterface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/dienste/Nutzerinterface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/entities/Kunde.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/userinterface/Bibliotheksinterface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/userinterface/Kundeninterface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/hfu/aufgabe8/userinterface/Userinterface.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -33,14 +33,14 @@ public class Userinterface
         {
             System.out.println("--------------------------\n\n");
 
-            System.out.println("Was möchten sie tun?");
+            System.out.println("Was mÃ¶chten sie tun?");
             System.out.println("(1) User anlegen");
             System.out.println("(2) Medien in Bestand erfassen");
             System.out.println("(3) Ausleihen");
-            System.out.println("(4) Verlängern");
-            System.out.println("(5) Zurückgeben");
+            System.out.println("(4) VerlÃ¤ngern");
+            System.out.println("(5) ZurÃ¼ckgeben");
             System.out.println("(0) Programm beenden");
-            System.out.print("Geben sie die gewünschte Option an: ");
+            System.out.print("Geben sie die gewÃ¼nschte Option an: ");
 
             Scanner sc = new Scanner(System.in);
             int option = sc.nextInt();
@@ -64,20 +64,20 @@ public class Userinterface
                     System.out.println("Ausleihe wurde erfasst!\n\n");
                     break;
                 case 4:
-                    //Verlängern
+                    //VerlÃ¤ngern
                     Bibliotheksinterface.MediumVerlaengern();
-                    System.out.println("Verlängerung wurde erfasst!\n\n");
+                    System.out.println("VerlÃ¤ngerung wurde erfasst!\n\n");
                     break;
 
                 case 5:
-                    //Zurückgeben
+                    //ZurÃ¼ckgeben
                     Bibliotheksinterface.MediumZurueckgeben();
-                    System.out.println("Rückgabe wurde erfasst!\n\n");
+                    System.out.println("RÃ¼ckgabe wurde erfasst!\n\n");
                     break;
 
                 case 0:
                     quit = true;
-                    System.out.println("Vielen Dank für die Nutzung der Software, bis bald!\n\n");
+                    System.out.println("Vielen Dank fÃ¼r die Nutzung der Software, bis bald!\n\n");
                     break;
 
                 default:

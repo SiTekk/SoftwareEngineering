@@ -18,8 +18,8 @@ public class BibliotheksDienst
             nutzerverwaltung = new Nutzerverwaltung();
             medienverwaltung = new Medienverwaltung();
 
-            medienverwaltung.mediumErfassen("Informatik 1", "Olaf Neiﬂe", 1);
-            medienverwaltung.mediumErfassen("Informatik 2", "Olaf Neiﬂe", 1);
+            medienverwaltung.mediumErfassen("Informatik 1", "Olaf Nei√üe", 1);
+            medienverwaltung.mediumErfassen("Informatik 2", "Olaf Nei√üe", 1);
             medienverwaltung.mediumErfassen("Softwareengineering 1", "Bernhard Hollunder", 1);
             medienverwaltung.mediumErfassen("Softwareengineering 2", "Bernhard Hollunder", 1);
             medienverwaltung.mediumErfassen("Automaten und Formale Sprachen 1", "Bernhard Hollunder", 1);
