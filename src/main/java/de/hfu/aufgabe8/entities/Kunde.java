@@ -10,10 +10,6 @@ public class Kunde extends Nutzer {
     private String plz;
     private String telefonnummer;
 
-    public Kunde() {
-        super();
-    }
-
     public Kunde(int id, String vorname, String nachname, String benutzername,
           String passwort, String eMail, LocalDate geburtstag, Fakultaet fakultaet,
           String strasse, int hausnummer, String ort, String plz, String telefonnummer) {
