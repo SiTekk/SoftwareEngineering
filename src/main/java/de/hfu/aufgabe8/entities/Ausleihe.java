@@ -83,4 +83,10 @@ public class Ausleihe {
     {
         return ausleihdatum;
     }
+
+    @Override
+    public String toString()
+    {
+        return gebuchtesMedium.toString() + "\nAusgeliehen von " + ausleiher.toString() + "\nRückgabedatum: " + rueckgabedatum.toString();
+    }
 }
