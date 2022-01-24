@@ -45,6 +45,9 @@ public class Bibliotheksinterface {
 
     public static void MediumAusleihen() {
         Medium medium = MediumAuswaehlen(BibliotheksDienst.getMedieninterface().getMedienListeIterator());
+        if (medium == null)
+            return;
+            
         Nutzer nutzer = BibliotheksDienst.getNutzerinterface().getLoggedInUser();
         if (BibliotheksDienst.getMedieninterface().mediumAusleihen(medium, nutzer))
             System.out.println("Medium: " + medium.getTitel() + " von: " + nutzer.getBenutzername() + " ausgeliehen.");
