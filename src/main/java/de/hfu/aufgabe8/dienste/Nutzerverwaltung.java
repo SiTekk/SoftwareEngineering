@@ -57,13 +57,13 @@ public class Nutzerverwaltung implements Nutzerinterface
     }
 
     @Override
-    public void mahnungSenden(Mahnung mahnung, Ausleihe ausleihe) {
-        ausleihe.setMahnung(mahnung);
-    }
+    public void mahnungSenden(int mediumId, String grund) 
+    {
+        Ausleihe ausleihe = BibliotheksDienst.getMedieninterface().getAusleiheByMedium(BibliotheksDienst.getMedieninterface().getMediumById(mediumId));
+        Mahnung mahnung = new Mahnung(ausleihe, grund, LocalDate.now().plusMonths(1), MahnungStati.Laufend);
 
-    public void mahnungAendern(Mahnung mahnung) {
-        // TODO - implement Nutzerverwaltung.mahnungÄndern
-        throw new UnsupportedOperationException();
+        ausleihe.setMahnung(mahnung);
+        Datenbank.getMahnungList().add(mahnung);
     }
 
     @Override
