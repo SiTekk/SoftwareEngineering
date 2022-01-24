@@ -1,9 +1,5 @@
 package de.hfu.aufgabe8.dienste;
 
-import de.hfu.aufgabe8.entities.*;
-
-import java.time.LocalDate;
-
 public class BibliotheksDienst
 {
     private static Nutzerverwaltung nutzerverwaltung;
@@ -32,15 +28,6 @@ public class BibliotheksDienst
             nutzerverwaltung.nutzerHinzufuegen("Donald", "Duck", "dduck", "1234" );
 
             initialized = true;
-
-            /*
-            System.out.println("\nKunde 2 leiht 5 Medien aus:");
-            medienverwaltung.mediumAusleihen(medium5, kunde2);
-            medienverwaltung.mediumAusleihen(medium7, kunde2);
-            medienverwaltung.mediumAusleihen(medium8, kunde2);
-            medienverwaltung.mediumAusleihen(medium9, kunde2);
-            medienverwaltung.mediumAusleihen(medium10, kunde2);
-            */
         }
     }
 

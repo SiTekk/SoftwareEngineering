@@ -10,14 +10,10 @@ import java.util.List;
 public class Medienverwaltung implements Medieninterface
 {
     private static final int maxAusleihen = 5;
-    private List<Medium> mediumList;
-    private List<Ausleihe> ausleiheList;
-    private List<Standort> standortList;
 
-    protected Medienverwaltung() {
-        mediumList = new ArrayList<>();
-        ausleiheList = new ArrayList<>();
-        standortList = new ArrayList<>();
+    protected Medienverwaltung() 
+    {
+        Datenbank.initialize();
     }
 
     @Override
@@ -31,7 +27,7 @@ public class Medienverwaltung implements Medieninterface
         if(zulaessig)
         {
             Ausleihe ausleihe = new Ausleihe(medium, nutzer, aktuellesDatum, rueckgabeDatum, null);
-            ausleiheList.add(ausleihe);
+            Datenbank.getAusleiheList().add(ausleihe);
             nutzer.getAusleihen().add(ausleihe);
         }
 
@@ -53,7 +49,7 @@ public class Medienverwaltung implements Medieninterface
         if(ausleihe != null)
         {
             ausleihe.getAusleiher().getAusleihen().remove(ausleihe);
-            ausleiheList.remove(ausleihe);
+            Datenbank.getAusleiheList().remove(ausleihe);
         }
 
         return ausleihe != null;
@@ -63,8 +59,8 @@ public class Medienverwaltung implements Medieninterface
     public void mediumErfassen(String titel, String autor, int typ)
     {
         int id = 0;
-        if(mediumList.size() > 0)
-            id = mediumList.get(mediumList.size() - 1).getId() + 1;
+        if(Datenbank.getMediumList().size() > 0)
+            id = Datenbank.getMediumList().get(Datenbank.getMediumList().size() - 1).getId() + 1;
 
         Medium medium;
 
@@ -77,7 +73,7 @@ public class Medienverwaltung implements Medieninterface
                 medium = new Buch(id, titel, autor, "0000001", "Programmierung 1", Genre.Informatik, LocalDate.of(2000, 1, 1), "HFU Boss", "Deutsch", 200, "Taschenbuch");
                 break;
         }
-        mediumList.add(medium);
+        Datenbank.getMediumList().add(medium);
     }
 
     @Override
@@ -105,7 +101,7 @@ public class Medienverwaltung implements Medieninterface
     {
         Medium medium = null;
 
-        for(Medium m : mediumList)
+        for(Medium m : Datenbank.getMediumList())
         {
             if(m.getId() == id)
             {
@@ -122,7 +118,7 @@ public class Medienverwaltung implements Medieninterface
     {
         Ausleihe ausleihe = null;
 
-        for(Ausleihe a : ausleiheList)
+        for(Ausleihe a : Datenbank.getAusleiheList())
         {
             if (a.getGebuchtesMedium().getId() == medium.getId())
             {
@@ -136,6 +132,6 @@ public class Medienverwaltung implements Medieninterface
 
     @Override
     public Iterator<Medium> getMedienListeIterator() {
-        return mediumList.listIterator();
+        return Datenbank.getMediumList().listIterator();
     }
 }
