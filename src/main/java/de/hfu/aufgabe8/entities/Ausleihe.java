@@ -1,10 +1,5 @@
 package de.hfu.aufgabe8.entities;
 
-import de.hfu.aufgabe8.entities.AusleiheStati;
-import de.hfu.aufgabe8.entities.Mahnung;
-import de.hfu.aufgabe8.entities.Medium;
-import de.hfu.aufgabe8.entities.Nutzer;
-
 import java.time.LocalDate;
 
 public class Ausleihe {

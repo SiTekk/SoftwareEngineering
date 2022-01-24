@@ -3,9 +3,7 @@ package de.hfu.aufgabe8.dienste;
 import de.hfu.aufgabe8.entities.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class Medienverwaltung implements Medieninterface
 {
