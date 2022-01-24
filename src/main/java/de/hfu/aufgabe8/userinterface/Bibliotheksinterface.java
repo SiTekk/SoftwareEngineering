@@ -5,7 +5,9 @@ import de.hfu.aufgabe8.entities.Ausleihe;
 import de.hfu.aufgabe8.entities.Medium;
 import de.hfu.aufgabe8.entities.Nutzer;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class Bibliotheksinterface {
@@ -57,8 +59,12 @@ public class Bibliotheksinterface {
         BibliotheksDienst.getMedieninterface().mediumVerlaengern(medium);
     }
 
-    public static Medium MediumAuswaehlen(Iterator iterator) {
-        while (iterator.hasNext()) {
+    public static Medium MediumAuswaehlen(Iterator iterator) 
+    {
+        List<Medium> medienList = new ArrayList<>();
+
+        while (iterator.hasNext()) 
+        {
             Object o = iterator.next();
             Medium m;
 
@@ -67,6 +73,7 @@ public class Bibliotheksinterface {
             else
                 m = ((Ausleihe) o).getGebuchtesMedium();
 
+            medienList.add(m);
             System.out.println(m.toString());
         }
 
@@ -74,7 +81,13 @@ public class Bibliotheksinterface {
         System.out.println("Bitte geben Sie die ID des Mediums ein:");
         int id = sc.nextInt();
 
-        return BibliotheksDienst.getMedieninterface().getMediumById(id);
+        for(Medium m : medienList)
+        {            
+            if(m.getId() == id)
+                return BibliotheksDienst.getMedieninterface().getMediumById(id);
+        }
+
+        return null;
     }
 
 }
