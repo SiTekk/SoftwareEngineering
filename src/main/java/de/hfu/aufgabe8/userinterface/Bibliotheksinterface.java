@@ -38,6 +38,9 @@ public class Bibliotheksinterface {
         } else {
             System.out.println("Fehlerhafte Eingabe");
         }
+
+        System.out.println("Medium wurde erfasst!\n\n");
+
     }
 
     public static void MediumAusleihen() {
@@ -46,17 +49,31 @@ public class Bibliotheksinterface {
         if (BibliotheksDienst.getMedieninterface().mediumAusleihen(medium, nutzer))
             System.out.println("Medium: " + medium.getTitel() + " von: " + nutzer.getBenutzername() + " ausgeliehen.");
         else
-            System.out.println("Medium ist aktuell Ausgeliehen.");
+            System.out.println("Medium ist aktuell Ausgeliehen, oder die maximale Ausleihanzahl wurde erreicht.");
     }
 
     public static void MediumZurueckgeben() {
-        Medium medium = MediumAuswaehlen(BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().iterator());
-        BibliotheksDienst.getMedieninterface().mediumZurueckgeben(medium);
+        if (BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().size() != 0) {
+            Medium medium = MediumAuswaehlen(BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().iterator());
+            if (medium != null) {
+                BibliotheksDienst.getMedieninterface().mediumZurueckgeben(medium);
+                System.out.println("Rückgabe wurde erfasst!\n\n");
+            }
+        } else {
+            System.out.println("Keine Ausleihen vorhanden!");
+        }
     }
 
     public static void MediumVerlaengern() {
-        Medium medium = MediumAuswaehlen(BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().iterator());
-        BibliotheksDienst.getMedieninterface().mediumVerlaengern(medium);
+        if (BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().size() != 0) {
+            Medium medium = MediumAuswaehlen(BibliotheksDienst.getNutzerinterface().getLoggedInUser().getAusleihen().iterator());
+            if (medium != null) {
+                BibliotheksDienst.getMedieninterface().mediumVerlaengern(medium);
+                System.out.println("Verlängerung wurde erfasst!\n\n");
+            }
+        } else {
+            System.out.println("Keine Ausleihen vorhanden!");
+        }
     }
 
     public static Medium MediumAuswaehlen(Iterator iterator) 
