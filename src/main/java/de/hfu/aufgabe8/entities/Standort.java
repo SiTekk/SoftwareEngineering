@@ -14,5 +14,15 @@ public class Standort {
     private String telefonnummer;
     private String eMail;
 
-    //TODO Medium zum Standort hinzufügen
+    public Standort(int id, String name, String strasse, int hausnummer, String ort, String plz, String telefonnummer,
+            String eMail) {
+        this.id = id;
+        this.name = name;
+        this.strasse = strasse;
+        this.hausnummer = hausnummer;
+        this.ort = ort;
+        this.plz = plz;
+        this.telefonnummer = telefonnummer;
+        this.eMail = eMail;
+    }
 }
