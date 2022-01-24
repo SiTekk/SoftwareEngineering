@@ -49,32 +49,25 @@ public class Userinterface
             {
                 case 1:
                     // Kunde anlegen
-                    //TODO: nur für dich Maxi
                     Kundeninterface.KundeAnlegen();
-                    System.out.println("Kunde wurde erfasst!\n\n");
                     break;
                 case 2:
                     //Medium erfassen
-                    //TODO: nur für dich Maxi
                     Bibliotheksinterface.MediumErfassen();
-                    System.out.println("Medium wurde erfasst!\n\n");
                     break;
 
                 case 3:
                     //Ausleihen
                     Bibliotheksinterface.MediumAusleihen();
-                    System.out.println("Ausleihe wurde erfasst!\n\n");
                     break;
                 case 4:
                     //Verlängern
                     Bibliotheksinterface.MediumVerlaengern();
-                    System.out.println("Verlängerung wurde erfasst!\n\n");
                     break;
 
                 case 5:
                     //Zurückgeben
                     Bibliotheksinterface.MediumZurueckgeben();
-                    System.out.println("Rückgabe wurde erfasst!\n\n");
                     break;
 
                 case 0:
