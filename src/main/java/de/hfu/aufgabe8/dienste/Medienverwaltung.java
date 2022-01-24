@@ -35,7 +35,7 @@ public class Medienverwaltung implements Medieninterface
     @Override
     public void mediumAnfordern(Medium medium, Nutzer nutzer)
     {
-        // TODO - implement Medienverwaltung.mediumAnfordern
+        // implement Medienverwaltung.mediumAnfordern
         throw new UnsupportedOperationException();
     }
 
@@ -76,7 +76,7 @@ public class Medienverwaltung implements Medieninterface
 
     @Override
     public void mediumLoeschen(Medium medium) {
-        // TODO - implement Medienverwaltung.mediumL�schen
+        //  implement Medienverwaltung.mediumLoeschen
         throw new UnsupportedOperationException();
     }
 

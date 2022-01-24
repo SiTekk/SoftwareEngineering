@@ -25,6 +25,8 @@ public class Kundeninterface
         String passwort = sc.nextLine();
 
         BibliotheksDienst.getNutzerinterface().nutzerHinzufuegen(v_name, n_name, benutzername, passwort);
+        System.out.println("Kunde wurde erfasst!\n\n");
+
     }
 
     public static Nutzer KundeAuswaehlen()
