@@ -49,11 +49,13 @@ public class Userinterface
             {
                 case 1:
                     // Kunde anlegen
+                    //TODO: nur für dich Maxi
                     Kundeninterface.KundeAnlegen();
                     System.out.println("Kunde wurde erfasst!\n\n");
                     break;
                 case 2:
                     //Medium erfassen
+                    //TODO: nur für dich Maxi
                     Bibliotheksinterface.MediumErfassen();
                     System.out.println("Medium wurde erfasst!\n\n");
                     break;
