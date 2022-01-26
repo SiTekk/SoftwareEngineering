@@ -75,9 +75,16 @@ public class Medienverwaltung implements Medieninterface
     }
 
     @Override
-    public void mediumLoeschen(Medium medium) {
+    public void mediumLoeschen(Medium medium) 
+    {
         //  implement Medienverwaltung.mediumLoeschen
         throw new UnsupportedOperationException();
+
+        //Ausleihe ausleihe = getAusleiheByMedium(medium);
+        //ausleihe.getAusleiher().getAusleihen().remove(ausleihe);
+        //Datenbank.getAusleiheList().remove(ausleihe);
+        //Datenbank.getMediumList().remove(medium);
+
     }
 
     @Override
